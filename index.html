@@ -91,11 +91,12 @@
     border:1.5px solid var(--gold);
     border-radius:999px;
     color:var(--gold-deep);
-    font-size:clamp(15px,3.6vw,19px);
+    font-size:clamp(14px,3.4vw,18px);
     font-weight:600;
-    letter-spacing:.14em;
+    letter-spacing:.1em;
     background:rgba(255,255,255,.6);
   }
+  .date-badge .dot{color:var(--gold-soft);padding:0 .5em;}
   .dress{
     margin:20px 0 0;
     font-size:clamp(14px,3.4vw,17px);
@@ -155,9 +156,9 @@
     font-family:"Cormorant Garamond",serif;
     font-size:20px;font-weight:600;color:var(--gold-deep);letter-spacing:.06em;
   }
-  .act .name{font-size:19px;font-weight:700;color:var(--ink);margin:2px 0 3px;letter-spacing:.05em;}
+  .act .name{font-size:18px;font-weight:700;color:var(--ink);margin:2px 0 3px;letter-spacing:.04em;}
   .act .sub-en{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--rose);font-size:15px;margin-bottom:10px;}
-  .act .desc{font-size:14px;color:var(--ink-soft);line-height:1.55;}
+  .act .desc{font-size:13.5px;color:var(--ink-soft);line-height:1.55;}
   .arrow{display:grid;place-items:center;color:var(--gold);font-size:22px;font-weight:700;}
 
   .flow{
@@ -168,11 +169,32 @@
     border-radius:16px;
     padding:14px 18px;
   }
-  .flow .step{font-size:clamp(14px,3.4vw,17px);font-weight:600;color:var(--ink);letter-spacing:.05em;}
+  .flow .step{font-size:clamp(13px,3.2vw,16px);font-weight:600;color:var(--ink);letter-spacing:.04em;}
   .flow .sep{color:var(--gold);font-size:18px;}
 
+  /* ---------- GROUPS ---------- */
+  .groups{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px;}
+  .group-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;}
+  .group-card.g2{background:linear-gradient(180deg,#fbeeee,#fdf7f1);border-color:#eccfca;}
+  .group-card .g-tag{font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:600;letter-spacing:.08em;color:var(--gold-deep);}
+  .group-card.g2 .g-tag{color:#b6706a;}
+  .group-card h4{margin:2px 0 10px;font-size:19px;font-weight:700;color:var(--ink);letter-spacing:.04em;}
+  .group-card .members{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+  .group-card .m{font-size:13px;font-weight:600;color:var(--ink);background:rgba(183,146,79,.16);border-radius:999px;padding:3px 11px;}
+  .group-card.g2 .m{background:rgba(200,138,134,.18);}
+  .group-card .mission{font-size:13.5px;color:var(--ink-soft);line-height:1.55;}
+  .group-card .mission b{color:var(--ink);font-weight:600;}
+
+  /* ---------- TRIPS ---------- */
+  .trips{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+  .trip{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line-soft);border-radius:14px;padding:12px 14px;}
+  .trip .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(150deg,var(--gold),var(--gold-deep));color:#fff;font-weight:700;font-size:15px;font-family:"Cormorant Garamond",serif;}
+  .trip .txt{font-size:14px;color:var(--ink);line-height:1.55;}
+  .trip .txt b{color:var(--gold-deep);}
+  .trip .txt .sub{display:block;font-size:12px;color:var(--ink-soft);margin-top:2px;}
+
   /* ---------- TIMELINE ---------- */
-  .tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .tl-single{max-width:660px;margin:0 auto;}
   table{width:100%;border-collapse:collapse;font-size:14.5px;}
   .tl-table thead th{
     background:linear-gradient(180deg,#efe0c4,#e8d4b0);
@@ -184,14 +206,11 @@
   .tl-table thead th:first-child{border-radius:10px 0 0 0;}
   .tl-table thead th:last-child{border-radius:0 10px 0 0;}
   .tl-table td{
-    padding:8px 10px;border:1px solid var(--line-soft);vertical-align:middle;
+    padding:8px 12px;border:1px solid var(--line-soft);vertical-align:middle;
   }
   .tl-table tbody tr:nth-child(even){background:#fdf7ec;}
   .t-time{font-weight:700;color:var(--gold-deep);white-space:nowrap;text-align:center;font-family:"Cormorant Garamond",serif;font-size:16px;}
   .t-own{text-align:center;white-space:nowrap;color:var(--ink);font-weight:600;}
-  .t-own .who{
-    display:inline-block;min-width:20px;
-  }
 
   .note{
     margin-top:18px;
@@ -205,30 +224,24 @@
 
   /* ---------- PEOPLE ---------- */
   .people{
-    display:grid;grid-template-columns:repeat(8,1fr);gap:10px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
   }
   .person{
     background:var(--card);border:1px solid var(--line);border-radius:16px;
-    padding:16px 8px 12px;text-align:center;display:flex;flex-direction:column;
+    padding:16px 12px 13px;text-align:center;display:flex;flex-direction:column;
   }
   .person .ico{font-size:24px;line-height:1;margin-bottom:8px;}
-  .person .who{font-size:17px;font-weight:700;color:var(--ink);letter-spacing:.04em;}
-  .person .letter{
-    font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600;
-    color:var(--gold-deep);line-height:1;
-  }
+  .person .who{font-size:18px;font-weight:700;color:var(--ink);letter-spacing:.04em;}
   .person .role{font-size:12.5px;color:var(--gold-deep);font-weight:600;margin:5px 0 6px;}
-  .person .duty{font-size:11.5px;color:var(--ink-soft);line-height:1.5;flex:1;}
-  .person .bk{
-    margin-top:9px;font-size:11px;color:var(--gold-deep);
-    background:rgba(183,146,79,.12);border-radius:999px;padding:3px 8px;letter-spacing:.03em;
-  }
+  .person .duty{font-size:12px;color:var(--ink-soft);line-height:1.5;flex:1;}
+  .person .grp{margin-top:8px;font-size:10.5px;letter-spacing:.03em;color:var(--gold-deep);background:rgba(183,146,79,.12);border-radius:999px;padding:2px 8px;align-self:center;}
+  .person.g2 .grp{color:#b6706a;background:rgba(200,138,134,.14);}
   .person.hl{background:linear-gradient(180deg,#fbeeee,#fdf6f0);border-color:#eccfca;}
   .person.hl .ico{color:var(--rose);}
 
   /* ---------- EQUIPMENT ---------- */
   .eq-wrap{overflow-x:auto;}
-  .eq-table{min-width:560px;font-size:14.5px;}
+  .eq-table{min-width:600px;font-size:14.5px;}
   .eq-table thead th{
     background:linear-gradient(180deg,#efe0c4,#e8d4b0);color:var(--gold-deep);
     font-weight:700;letter-spacing:.05em;padding:10px 12px;border:1px solid var(--line);text-align:left;
@@ -252,7 +265,7 @@
   .tips-head .bulb{font-size:22px;}
   .tips-head h3{margin:0;font-size:19px;font-weight:700;color:var(--gold-deep);letter-spacing:.06em;}
   .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;}
-  .tips-grid li{list-style:none;position:relative;padding-left:24px;font-size:14.5px;color:var(--ink);line-height:1.6;}
+  .tips-grid li{list-style:none;position:relative;padding-left:24px;font-size:14px;color:var(--ink);line-height:1.6;}
   .tips-grid li::before{content:"✔";position:absolute;left:0;top:0;color:var(--gold);font-size:14px;}
   .tips-grid ul{margin:0;padding:0;}
   .tips-grid b{color:var(--gold-deep);}
@@ -264,7 +277,7 @@
   @media (max-width:760px){
     .acts{grid-template-columns:1fr;}
     .acts .arrow{transform:rotate(90deg);padding:2px 0;}
-    .tl-grid{grid-template-columns:1fr;}
+    .groups{grid-template-columns:1fr;}
     .people{grid-template-columns:repeat(2,1fr);}
     .tips-grid{grid-template-columns:1fr;}
     .section{padding:24px 18px 26px;}
@@ -286,7 +299,7 @@
     <p class="names">浩宇<span class="amp">×</span>肇偉</p>
     <h1 class="headline">求婚執行計畫</h1>
     <p class="script">Proposal Runbook</p>
-    <span class="date-badge">暫定 2025 / 08 / 04（一）18:00</span>
+    <span class="date-badge">暫定 8 / 04<span class="dot">·</span>河口湖 Airbnb<span class="dot">·</span>求婚約 18:00</span>
     <p class="dress"><span class="heart">♥</span> Dress Code：全員<b>白色服裝</b>，呼應主題 <span class="en">Beautiful in White</span></p>
   </header>
 
@@ -299,10 +312,10 @@
 
     <div class="acts">
       <div class="act">
-        <div class="ico">🕯️</div>
+        <div class="ico">🎈</div>
         <div class="tag">Act 1</div>
         <div class="name">佈置就位</div>
-        <div class="desc">設備全測完 +<br>肇偉被帶回站定電視前</div>
+        <div class="desc">雙組接駁・搬行李回 Airbnb（實為佈置）<br>吹氣球鋪動線 + LED 燈串<br>浩宇藏身 2F</div>
       </div>
       <div class="arrow">→</div>
       <div class="act">
@@ -310,7 +323,7 @@
         <div class="tag">Act 2</div>
         <div class="name">求婚影片</div>
         <div class="sub-en">Beautiful in White</div>
-        <div class="desc">影片播畢</div>
+        <div class="desc">肇偉定位沙發<br>關燈 LED 昏暗中播畢</div>
       </div>
       <div class="arrow">→</div>
       <div class="act">
@@ -318,65 +331,87 @@
         <div class="tag">Act 3</div>
         <div class="name">下樓自彈自唱 + 求婚</div>
         <div class="sub-en">Can't Help Falling in Love</div>
-        <div class="desc">浩宇唱畢、戴上戒指、<br>肇偉回應</div>
+        <div class="desc">浩宇抱花束下樓、自彈自唱、<br>戴上戒指、肇偉回應</div>
       </div>
     </div>
 
     <div class="flow">
+      <span class="step">雙組接駁佈置</span>
+      <span class="sep">→</span>
       <span class="step">影片醞釀情緒</span>
       <span class="sep">→</span>
-      <span class="step">真人現身</span>
+      <span class="step">抱花束現身</span>
       <span class="sep">→</span>
       <span class="step">單膝下跪求婚</span>
     </div>
   </section>
 
-  <!-- ===================== ② 時間軸 ===================== -->
+  <!-- ===================== ② 雙組接駁與佈置動線 ===================== -->
   <section class="section">
     <div class="sec-head">
       <span class="sec-num">2</span>
-      <h2 class="sec-title">時間軸<small>T0 = 肇偉回到家門口</small></h2>
+      <h2 class="sec-title">雙組接駁與佈置動線<small>16:00 抵達寄存處 · Alex 開 8 人座車全程接駁</small></h2>
     </div>
 
-    <div class="tl-grid">
-      <!-- 左表：前置 -->
-      <table class="tl-table">
-        <thead>
-          <tr><th style="width:26%">時間</th><th>事件</th><th style="width:22%">主責</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="t-time">T−30</td><td>A 把肇偉帶出門</td><td class="t-own">A</td></tr>
-          <tr><td class="t-time">T−28</td><td>設備測試（試播影片）</td><td class="t-own">B</td></tr>
-          <tr><td class="t-time">T−25</td><td>烏克麗麗調音</td><td class="t-own">D</td></tr>
-          <tr><td class="t-time">T−22</td><td>攝影就位（腳架＋備機）</td><td class="t-own">E、F</td></tr>
-          <tr><td class="t-time">T−20</td><td>燈光與蠟燭預備</td><td class="t-own">C</td></tr>
-          <tr><td class="t-time">T−15</td><td>全員就位回報</td><td class="t-own">F 收訊</td></tr>
-          <tr><td class="t-time">T−5</td><td>A 通知即將回場（5分鐘到）</td><td class="t-own">A</td></tr>
-        </tbody>
-      </table>
+    <div class="groups">
+      <div class="group-card">
+        <div class="g-tag">Group A</div>
+        <h4>第一大組</h4>
+        <div class="members"><span class="m">浩宇</span><span class="m">Nick</span><span class="m">Frank</span><span class="m">Alex</span></div>
+        <div class="mission">名義上<b>搬行李回 Airbnb</b>，實為<b>佈置求婚現場</b>（播放測試、遮光 LED、吹氣球、藏身）。</div>
+      </div>
+      <div class="group-card g2">
+        <div class="g-tag">Group B</div>
+        <h4>第二大組</h4>
+        <div class="members"><span class="m">肇偉</span><span class="m">景隆</span><span class="m">Olek</span><span class="m">Bill</span></div>
+        <div class="mission">去<b>河口湖 Aeon 採買烤肉食材</b>，同時把<b>肇偉自然帶開</b>；返程再帶他回場。</div>
+      </div>
+    </div>
 
-      <!-- 右表：現場 -->
+    <ol class="trips">
+      <li class="trip"><span class="n">1</span><span class="txt">Alex 載<b>浩宇、Nick</b>（＋部分行李）回 Airbnb，開始佈置。</span></li>
+      <li class="trip"><span class="n">2</span><span class="txt">Alex 回寄存處 → 載<b>第二大組</b>（肇偉、景隆、Olek、Bill）到 <b>Aeon 採買</b>。</span></li>
+      <li class="trip"><span class="n">3</span><span class="txt">Alex 回載<b>剩餘行李 ＋ Frank</b> 回 Airbnb（行李載完）→ Frank 架主機位。<span class="sub">※ 行李若需看守，Frank 留守隨此趟回（目前預設）。</span></span></li>
+      <li class="trip"><span class="n">4</span><span class="txt">佈置完成（<b>約 17:30</b>）→ Alex 前往 <b>Aeon 接第二大組</b>（延後則順延接回）。</span></li>
+      <li class="trip"><span class="n">5</span><span class="txt">停<b>車庫</b>：景隆帶肇偉（Olek 跟）進屋定位沙發；同時 Alex、Bill 放食材入冰箱 → 關車庫 → 走大門進屋 → <b>開始播影片</b>。</span></li>
+    </ol>
+
+    <div class="note">
+      <span class="bulb">🎈</span>
+      <div>佈置任務（第一大組）：<b>接 HDMI 試播影音</b> · <b>遮光 → 關燈 → 開 LED 燈串</b> · <b>吹氣球鋪滿車庫→沙發動線</b> · 浩宇<b>調好烏克麗麗擺定點、備妥花束、藏身 2F</b> · Frank 架主機位。</div>
+    </div>
+  </section>
+
+  <!-- ===================== ③ 儀式時間軸 ===================== -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="sec-num">3</span>
+      <h2 class="sec-title">儀式時間軸<small>T0 = 肇偉定位沙發（約 18:00）</small></h2>
+    </div>
+
+    <div class="tl-single">
       <table class="tl-table">
         <thead>
-          <tr><th style="width:26%">時間</th><th>事件</th><th style="width:22%">主責</th></tr>
+          <tr><th style="width:22%">時間</th><th>事件</th><th style="width:22%">主責</th></tr>
         </thead>
         <tbody>
-          <tr><td class="t-time">T0</td><td>肇偉進門，帶位至電視前</td><td class="t-own">A</td></tr>
-          <tr><td class="t-time">T0+0.5</td><td>開始訊號 → 關燈、點蠟燭、準備播放</td><td class="t-own">A→C、B</td></tr>
-          <tr><td class="t-time">T0+1</td><td>Act 2 播影片（Beautiful in White）</td><td class="t-own">B</td></tr>
-          <tr><td class="t-time">影片中</td><td>浩宇移動至 2 樓樓梯口待命</td><td class="t-own">浩宇</td></tr>
-          <tr><td class="t-time">影片畢</td><td>Act 3 浩宇下樓（手持花）</td><td class="t-own">浩宇</td></tr>
-          <tr><td class="t-time">+0.5</td><td>轉場 talking（說幾句話）</td><td class="t-own">浩宇</td></tr>
-          <tr><td class="t-time">+1</td><td>D 遞烏克麗麗</td><td class="t-own">D</td></tr>
+          <tr><td class="t-time">T0</td><td>景隆自車庫帶肇偉進屋、確認白服、定位沙發</td><td class="t-own">景隆</td></tr>
+          <tr><td class="t-time">T0 同時</td><td>放食材入冰箱 → 關車庫 → 大門進屋歸位</td><td class="t-own">Alex、Bill</td></tr>
+          <tr><td class="t-time">+0.5</td><td>景隆低調發就位訊號；浩宇於 2F 待命、全場靜默</td><td class="t-own">景隆</td></tr>
+          <tr><td class="t-time">+1</td><td>Act 2 播影片（Beautiful in White），眾人低調拍攝</td><td class="t-own">Nick</td></tr>
+          <tr><td class="t-time">影片中</td><td>浩宇移至 2F 樓梯口待命</td><td class="t-own">浩宇</td></tr>
+          <tr><td class="t-time">影片畢</td><td>Act 3：浩宇<strong>抱花束</strong>下樓走向肇偉</td><td class="t-own">浩宇</td></tr>
+          <tr><td class="t-time">+0.5</td><td>轉場 talking（最後一句作 cue）</td><td class="t-own">浩宇</td></tr>
+          <tr><td class="t-time">+1</td><td>景隆自定點遞上已調音烏克麗麗</td><td class="t-own">景隆</td></tr>
           <tr><td class="t-time">+1.5</td><td>自彈自唱（Can't Help Falling in Love）</td><td class="t-own">浩宇</td></tr>
-          <tr><td class="t-time">歌末</td><td>單膝下跪、取出戒指、求婚</td><td class="t-own">浩宇 / E</td></tr>
+          <tr><td class="t-time">歌末</td><td>單膝下跪、取出戒指、求婚</td><td class="t-own">浩宇 / Frank</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="note">
       <span class="bulb">💡</span>
-      <div>暗號由 <b>A</b> 給出，<b>C、B</b> 看到即執行；<b>F</b> 負責訊號串接與現場機動。</div>
+      <div>暗號走<b>不含肇偉</b>的群組；Act 3 的 cue＝浩宇轉場的<b>最後一句話</b>，景隆聽到即遞琴（琴事先藏在肇偉看不到的定點）。攝影：<b>Frank 主機位</b> ＋ <b>Olek 第二機位</b> ＋ 景隆補拍。</div>
     </div>
   </section>
 
@@ -388,59 +423,61 @@
     </div>
 
     <div class="people">
-      <div class="person">
-        <div class="ico">🤵</div>
-        <div class="who">肇偉</div>
-        <div class="role">被求婚者</div>
-        <div class="duty">—</div>
-      </div>
       <div class="person hl">
         <div class="ico">❤️</div>
         <div class="who">浩宇</div>
         <div class="role">求婚者</div>
-        <div class="duty">Act 3 下樓、自彈自唱、求婚</div>
+        <div class="duty">佈置＋藏身 2F；Act 3 抱花束下樓、自彈自唱、求婚</div>
+        <div class="grp">第一大組</div>
+      </div>
+      <div class="person g2">
+        <div class="ico">🤵</div>
+        <div class="who">肇偉</div>
+        <div class="role">被求婚者</div>
+        <div class="duty">—（Aeon 採買當幌子）</div>
+        <div class="grp">第二大組</div>
       </div>
       <div class="person">
-        <div class="ico">👥</div>
-        <div class="letter">A</div>
-        <div class="role">支開／帶位組</div>
-        <div class="duty">支開肇偉、帶回場、帶位、下發訊號</div>
-        <div class="bk">備援：F</div>
+        <div class="ico">🚗</div>
+        <div class="who">Alex</div>
+        <div class="role">交通／場控／機動</div>
+        <div class="duty">8 人座車全程接駁；停車庫、放食材、關車庫；儀式機動</div>
+        <div class="grp">第一大組</div>
       </div>
       <div class="person">
         <div class="ico">📺</div>
-        <div class="letter">B</div>
-        <div class="role">播放組</div>
-        <div class="duty">接 HDMI、試播、Act 2 播影片</div>
-        <div class="bk">備援：F</div>
-      </div>
-      <div class="person">
-        <div class="ico">🕯️</div>
-        <div class="letter">C</div>
-        <div class="role">燈光／蠟燭組</div>
-        <div class="duty">關燈、點電子蠟燭、結束復燈</div>
-        <div class="bk">備援：F</div>
-      </div>
-      <div class="person">
-        <div class="ico">🎸</div>
-        <div class="letter">D</div>
-        <div class="role">烏克麗麗組</div>
-        <div class="duty">備琴、調音、Act 3 定點遞琴</div>
-        <div class="bk">備援：F</div>
+        <div class="who">Nick</div>
+        <div class="role">播放組（＋燈光）</div>
+        <div class="duty">接 HDMI、試播、Act 2 播放、音源；遮光＋關燈＋開 LED 燈串</div>
+        <div class="grp">第一大組</div>
       </div>
       <div class="person">
         <div class="ico">📷</div>
-        <div class="letter">E</div>
+        <div class="who">Frank</div>
         <div class="role">主攝影</div>
-        <div class="duty">腳架主機位、全程錄影</div>
-        <div class="bk">備援：F</div>
+        <div class="duty">主機位腳架、全程錄影（進門→影片→現身→求婚）</div>
+        <div class="grp">第一大組</div>
       </div>
-      <div class="person">
-        <div class="ico">🛡️</div>
-        <div class="letter">F</div>
-        <div class="role">機動</div>
-        <div class="duty">收發訊號、第三機位、補位缺口、處理突發</div>
-        <div class="bk">備援：A–E</div>
+      <div class="person g2">
+        <div class="ico">🧭</div>
+        <div class="who">景隆</div>
+        <div class="role">帶位／場控／遞琴</div>
+        <div class="duty">看住肇偉、發就位訊號、帶位定沙發、確認白服；Act 3 遞琴＋協助攝影</div>
+        <div class="grp">第二大組</div>
+      </div>
+      <div class="person g2">
+        <div class="ico">🎥</div>
+        <div class="who">Olek</div>
+        <div class="role">第二機位／協助攝影</div>
+        <div class="duty">隨景隆帶肇偉進屋；儀式全程第二機位、拍照錄影</div>
+        <div class="grp">第二大組</div>
+      </div>
+      <div class="person g2">
+        <div class="ico">🛒</div>
+        <div class="who">Bill</div>
+        <div class="role">採買／食材／機動</div>
+        <div class="duty">Aeon 採買烤肉食材；返程與 Alex 放食材入冰箱、大門進屋；儀式機動</div>
+        <div class="grp">第二大組</div>
       </div>
     </div>
   </section>
@@ -457,21 +494,25 @@
         <thead>
           <tr>
             <th style="width:26%">器材</th>
-            <th style="width:22%">用途</th>
+            <th style="width:24%">用途</th>
             <th style="width:16%">保管／負責</th>
             <th>備援</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="item">播放裝置（手機／筆電）</td><td>接 HDMI 播影片</td><td class="own">B</td><td class="bk">第二台手機／筆電（F）</td></tr>
-          <tr><td class="item">HDMI 線</td><td>裝置 → 電視</td><td class="own">B</td><td class="bk">多帶一條／轉接頭</td></tr>
-          <tr><td class="item">求婚影片檔（Beautiful in White）</td><td>Act 2 播放</td><td class="own">B</td><td class="bk">雲端 ＋ 本機各一份</td></tr>
-          <tr><td class="item">音源／喇叭</td><td>影片聲音</td><td class="own">B</td><td class="bk">電視內建喇叭／備用藍牙喇叭</td></tr>
-          <tr><td class="item">烏克麗麗</td><td>Act 3 自彈自唱</td><td class="own">D</td><td class="bk">備用琴／備弦 ＋ 調音器</td></tr>
-          <tr><td class="item">電子蠟燭</td><td>昏暗燭光氛圍</td><td class="own">C</td><td class="bk">多備幾顆 ＋ 電池</td></tr>
+          <tr><td class="item">播放裝置（手機／筆電）</td><td>接 HDMI 播影片</td><td class="own">Nick</td><td class="bk">第二台手機／筆電</td></tr>
+          <tr><td class="item">HDMI 線</td><td>裝置 → 電視</td><td class="own">Nick</td><td class="bk">多帶一條／轉接頭</td></tr>
+          <tr><td class="item">求婚影片檔（Beautiful in White）</td><td>Act 2 播放</td><td class="own">Nick</td><td class="bk">雲端 ＋ 本機各一份</td></tr>
+          <tr><td class="item">音源／喇叭</td><td>影片聲音</td><td class="own">Nick</td><td class="bk">電視內建／備用藍牙喇叭</td></tr>
+          <tr><td class="item">烏克麗麗</td><td>Act 3 自彈自唱</td><td class="own">浩宇 調 / 景隆 遞</td><td class="bk">備弦 ＋ 調音器</td></tr>
+          <tr><td class="item">LED 燈串</td><td>昏暗氛圍 ＋ 動線地面微光</td><td class="own">Nick</td><td class="bk">多備一組 ＋ 電池／行動電源</td></tr>
+          <tr><td class="item">氣球（＋打氣筒）</td><td>鋪滿肇偉動線地面</td><td class="own">第一大組</td><td class="bk">多帶，破了可補</td></tr>
+          <tr><td class="item">花束</td><td>Act 3 浩宇手持下樓</td><td class="own">浩宇貼身</td><td class="bk">—</td></tr>
           <tr><td class="item">戒指（戒指盒）</td><td>求婚</td><td class="own">浩宇貼身</td><td class="bk">不離身，不設備援裝置</td></tr>
-          <tr><td class="item">攝影機 ＋ 腳架</td><td>主機位錄影</td><td class="own">E</td><td class="bk">第二機位（F 手持）</td></tr>
-          <tr><td class="item">（確認）窗簾／遮光</td><td>營造昏暗環境</td><td class="own">C</td><td class="bk">—</td></tr>
+          <tr><td class="item">攝影機 ＋ 腳架</td><td>主機位 ＋ 第二機位錄影</td><td class="own">Frank / Olek</td><td class="bk">互為備援</td></tr>
+          <tr><td class="item">窗簾／遮光</td><td>營造昏暗環境</td><td class="own">Nick 確認</td><td class="bk">—（8 月傍晚天仍亮，需拉滿）</td></tr>
+          <tr><td class="item">8 人座車</td><td>全程接駁</td><td class="own">Alex</td><td class="bk">—</td></tr>
+          <tr><td class="item">烤肉食材</td><td>晚餐／當幌子</td><td class="own">Bill 採買 / Alex 入冰箱</td><td class="bk">—</td></tr>
         </tbody>
       </table>
     </div>
@@ -485,17 +526,21 @@
     </div>
     <div class="tips-grid">
       <ul>
-        <li>正式前至少<b>整彩排一次</b>（乾跑）</li>
-        <li>重點測試：HDMI 影音、關燈 → 播放銜接、下樓 → 遞琴 → 自彈自唱時序</li>
+        <li>氣球<b>提前一天或稍早先吹好、裝袋存放</b>，佈置窗口只做鋪設，免壓到 17:30</li>
+        <li>LED 燈串沿動線鋪，昏暗中給<b>地面微光</b>，避免踩氣球絆倒</li>
+        <li>單一台車、序列相依 → 佈置延後，<b>接回時間順延</b></li>
+        <li>行李若需看守 → <b>Frank 留守隨行李回</b>（目前預設）</li>
       </ul>
       <ul>
-        <li>戒指由<b>浩宇貼身保管</b></li>
-        <li>主機位 <b>E 優先</b>，其他人退到兩側不擋鏡頭</li>
+        <li>遮光窗簾<b>拉滿</b>（8 月傍晚天仍亮，是氛圍成敗關鍵）</li>
+        <li>烏克麗麗事先藏在<b>肇偉看不到、景隆可取</b>的定點</li>
+        <li>主機位 <b>Frank 優先</b>，其餘退兩側；戒指／花束<b>浩宇貼身</b></li>
+        <li>訊號走<b>不含肇偉</b>的群組；cue＝浩宇轉場最後一句</li>
       </ul>
     </div>
   </section>
 
-  <p class="footer"><span class="en">Beautiful in White</span> · 浩宇 ♥ 肇偉 · 2025.08.04</p>
+  <p class="footer"><span class="en">Beautiful in White</span> · 浩宇 ♥ 肇偉 · 河口湖 Airbnb</p>
 
 </div>
 </body>
